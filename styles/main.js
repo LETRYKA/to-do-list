@@ -8,3 +8,8 @@ function add() {
     add.classList.remove("none");
     addCont.appendChild(add);
 }
+
+function showmodul {
+    const modul = document.querySelector('#modul');
+    add.classList.remove("none");
+}
