@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>To-Do-List</title>
+</head>
+
+<body>
+    <div class="modul-cont center">
+        <div class="modul">
+            <div style="width: 90%; height: auto; margin-top: 25px;" class="space-between">
+                <img width="55px" height="55px" src="styles/img/add.png">
+                <i class="fa-solid fa-minus" style="color: #6d6d6d; cursor: pointer;"></i>
+            </div>
+            <div style="width: 90%; height: auto; margin-top: 30px;">
+                <h1>Create new Task</h1>
+                <p>Enter the specific info about your task</p>
+            </div>
+            <div style="width: 90%; height: auto; margin-top: 30px; display: flex; flex-flow: column;">
+                <label for="addtitle">Task title</label><br>
+                <input type="text" id="title" name="addtitle" placeholder="Night routine"><br>
+                <label for="addtitle">Description</label><br>
+                <input type="text" id="description" name="adddesc" placeholder="About"><br>
+                <label for="addstatus">Status</label><br>
+                <select name="status" id="status">
+                    <option value="todo">To do</option>
+                    <option value="inprogress">In Progress</option>
+                    <option value="stuck">Stuck</option>
+                    <option value="done">Done</option>
+                </select><br>
+                <label for="addpri">Priority</label><br>
+                <select name="priority" id="priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select><br>
+                <hr style="width: 100%; border: 0.5px solid #272727;"><br>
+                <div class="space-between" style="margin-bottom: 20px;">
+                    <p style="cursor: pointer;"><i class="fa-solid fa-copyright" style="color: #6d6d6d; margin-right: 8px;"></i>Learn about more</p>
+                    <div id="crtTask" onclick="add()" class="crtTask center">
+                        <p>Create Task</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="to-do-list" class="to-do">
+            <div class="title">
+                <h1>Tasks</h1>
+                <p class="count">3</p>
+            </div>
+            <div id="add-container" class="column">
+                <div id="todo" class="none"></div>
+            </div>
+            <div id="todo-new" onclick="add()" class="add-task-btn center">
+                <p><i class="fa-solid fa-plus" style="color: #ffffff; font-size: 1rem; margin-right: 10px;"></i>Add new
+                    task</p>
+            </div>
+        </div>
+        <div class="to-do"></div>
+        <div class="to-do"></div>
+        <div class="to-do"></div>
+    </div>
+</body>
+<script src="styles/main.js"></script>
+
+</html>

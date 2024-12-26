@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/graphik-trial');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    font-family: "Outfit", serif;
+}
+
+body {
+    background: #18181A;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+}
+
+.modul-cont {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.modul {
+    width: 30%;
+    height: auto;
+    background-color: #101010;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+.modul h1 {
+    color: white;
+    font-size: 25px;
+}
+
+.modul p {
+    margin-top: 5px;
+    color: #6D6D6D;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.modul label {
+    color: #6D6D6D;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: -10px;
+}
+
+#title {
+    width: 95%;
+    height: 35px;
+    outline: none;
+    color: white;
+    padding-left: 15px;
+    border-radius: 10px;
+    background: #101010;
+    border: 1px solid #272727;
+    margin-bottom: 5px;
+}
+
+#description {
+    width: 95%;
+    height: auto;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    background: #101010;
+    border: 1px solid #272727;
+    padding: 15px 0 100px 15px;
+    margin-bottom: 5px;
+}
+
+#status {
+    width: 95%;
+    height: 35px;
+    padding: 0 0 0 15px;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    background: #101010;
+    border: 1px solid #272727;
+    margin-bottom: 5px;
+}
+
+#priority {
+    width: 95%;
+    height: 35px;
+    padding: 0 0 0 15px;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    background: #101010;
+    border: 1px solid #272727;
+    margin-bottom: 5px;
+}
+
+.crtTask {
+    width: 30%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #735BFF;
+    cursor: pointer;
+}
+
+.crtTask p {
+    font-size: 0.9rem;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 20px;
+}
+
+.to-do {
+    width: 300px;
+    height: auto;
+    background: #101010;
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+}
+
+.title {
+    display: flex;
+    width: 85%;
+    justify-content: start;
+    align-items: center;
+    padding: 15px 0px 0px 0px;
+}
+
+.count {
+    color: #6D6D6D;
+    font-size: 14px;
+    padding: 3px 7px 3px 7px;
+    background-color: rgba(0, 83, 4, 0.438);
+    border-radius: 7px;
+    border: 1px solid #6D6D6D;
+
+}
+
+h1 {
+    font-size: 23px;
+    font-weight: 400;
+    color: white;
+    margin-right: 12px;
+}
+
+.add-task-btn {
+    margin: 20px 0 20px 0;
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #735BFF;
+    cursor: pointer;
+}
+
+.add-task-btn p {
+    font-size: 1rem;
+    color: white;
+}
+
+#add-container {
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#todo {
+    width: 100%;
+    height: 40px;
+    background-color: blue;
+}
+
+.none {
+    display: none;
+}
