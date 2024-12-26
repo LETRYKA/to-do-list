@@ -20,12 +20,43 @@ p {
     margin: 0;
 }
 
-.modul-cont {
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+/* Modul */
+
+#modul-cont {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 10;
+    display: none;
+    background: rgba(0, 0, 0, 0.61);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .modul {
@@ -58,7 +89,7 @@ p {
 }
 
 #title {
-    width: 95%;
+    width: 100%;
     height: 35px;
     outline: none;
     color: white;
@@ -67,10 +98,11 @@ p {
     background: #101010;
     border: 1px solid #272727;
     margin-bottom: 5px;
+    box-sizing: border-box;
 }
 
 #description {
-    width: 95%;
+    width: 100%;
     height: auto;
     outline: none;
     color: white;
@@ -79,10 +111,11 @@ p {
     border: 1px solid #272727;
     padding: 15px 0 100px 15px;
     margin-bottom: 5px;
+    box-sizing: border-box;
 }
 
 #status {
-    width: 95%;
+    width: 100%;
     height: 35px;
     padding: 0 0 0 15px;
     outline: none;
@@ -91,10 +124,11 @@ p {
     background: #101010;
     border: 1px solid #272727;
     margin-bottom: 5px;
+    box-sizing: border-box;
 }
 
 #priority {
-    width: 95%;
+    width: 100%;
     height: 35px;
     padding: 0 0 0 15px;
     outline: none;
@@ -103,43 +137,31 @@ p {
     background: #101010;
     border: 1px solid #272727;
     margin-bottom: 5px;
+    box-sizing: border-box;
 }
 
 .crtTask {
     width: 30%;
     height: 40px;
     border-radius: 10px;
+    border: 0px;
+    font-size: 0.9rem;
+    color: white;
     background-color: #735BFF;
     cursor: pointer;
 }
 
-.crtTask p {
-    font-size: 0.9rem;
+.fa-minus {
+    color: #6d6d6d;
+    transition: all 0.2s ease-in-out;
+}
+
+.fa-minus:hover {
     color: white;
-    margin-bottom: 4px;
 }
 
-.space-between {
-    display: flex;
-    justify-content: space-between;
-}
 
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
+/* To Do List Card */
 
 .container {
     width: 100%;
@@ -193,6 +215,7 @@ h1 {
     border-radius: 10px;
     background-color: #735BFF;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 .add-task-btn p {
@@ -200,21 +223,97 @@ h1 {
     color: white;
 }
 
+.add-task-btn p {
+    font-size: 1rem;
+    color: white;
+}
+
+.add-task-btn:hover {
+    background-color: white;
+}
+
+.add-task-btn:hover p {
+    color: #735BFF;
+}
+
+
 #add-container {
     width: 90%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+
 }
 
-#todo {
+.todo {
+    margin-top: 15px;
     width: 100%;
-    height: 40px;
-    background-color: blue;
+    height: auto;
+    background-color: rgb(22, 22, 22);
+    border-radius: 10px;
+    border: 1px solid #3b3b3b;
+    display: flex;
+    justify-content: center;
+}
+
+#todo-cont {
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-flow: column;
+    margin-top: 15px;
+}
+
+.high {
+    font-size: 12px;
+    color: #fd9292;
+    padding: 6px 10px 6px 10px;
+    border-radius: 6px;
+    background: #fd929244
+}
+
+.medium {
+    font-size: 12px;
+    color: #faea96;
+    padding: 6px 10px 6px 10px;
+    border-radius: 6px;
+    background: #fae99644;
+}
+
+.low {
+    font-size: 12px;
+    color: #b0dac3;
+    padding: 6px 10px 6px 10px;
+    border-radius: 6px;
+    background: #b0dac344;
+}
+
+.todo h1 {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.todo .todo-desc {
+    margin-top: 5px;
+    font-size: 15px;
+    color: #6d6d6d;
 }
 
 .none {
     display: none;
+}
+
+.row i {
+    color: #6d6d6d;
+    transition: all 0.2s ease-in-out;
+}
+
+.fa-trash:hover {
+    color: red;
+}
+
+.fa-pen-to-square:hover {
+    color: white;
 }

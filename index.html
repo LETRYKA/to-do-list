@@ -6,26 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <title>To-Do-List</title>
+    <link rel="icon" href="https://assets.awwwards.com/assets/images/favicon.svg" type="image/svg+xml">
+    <title>Todolist.</title>
 </head>
 
 <body>
-    <div id="modul" class="center none">
+    <!-- Create New Task Modul -->
+    <div id="modul-cont" class="center">
         <div class="modul">
             <div style="width: 90%; height: auto; margin-top: 25px;" class="space-between">
-                <img width="55px" height="55px" src="styles/img/add.png">
-                <i class="fa-solid fa-minus" style="color: #6d6d6d; cursor: pointer;"></i>
+                <img id="ico" width="55px" height="55px" src="styles/img/add.png">
+                <i class="fa-solid fa-minus" style="cursor: pointer;" onclick="hidemodul()"></i>
             </div>
             <div style="width: 90%; height: auto; margin-top: 30px;">
-                <h1>Create new Task</h1>
-                <p>Enter the specific info about your task</p>
+                <h1 id="headerTxt">Create new Task</h1>
+                <p id="lowerTxt">Enter the specific info about your task</p>
             </div>
             <div style="width: 90%; height: auto; margin-top: 30px; display: flex; flex-flow: column;">
                 <label for="addtitle">Task title</label><br>
-                <input type="text" id="title" name="addtitle" placeholder="Night routine"><br>
+                <input type="text" id="title" name="addtitle" placeholder="Night routine" required>
+                <p id="warTitle" style="display: none; color: #fd9292; font-size: 12px;"><i
+                        class="fa-solid fa-circle-minus" style="margin-right: 5px; align-self: center;"></i>Must enter
+                    title</p><br>
                 <label for="addtitle">Description</label><br>
-                <input type="text" id="description" name="adddesc" placeholder="About"><br>
+                <input type="text" id="description" name="adddesc" placeholder="About">
+                <p id="warDesc" style="display: none; color: #fd9292; font-size: 12px;"><i
+                        class="fa-solid fa-circle-minus" style="margin-right: 5px; align-self: center;"></i>Must enter
+                    description</p>
+                <br>
                 <label for="addstatus">Status</label><br>
                 <select name="status" id="status">
                     <option value="todo">To do</option>
@@ -35,31 +43,55 @@
                 </select><br>
                 <label for="addpri">Priority</label><br>
                 <select name="priority" id="priority">
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
                 </select><br>
                 <hr style="width: 100%; border: 0.5px solid #272727;"><br>
                 <div class="space-between" style="margin-bottom: 20px;">
-                    <p style="cursor: pointer;"><i class="fa-solid fa-copyright" style="color: #6d6d6d; margin-right: 8px;"></i>Learn about more</p>
-                    <div id="crtTask" onclick="add()" class="crtTask center">
-                        <p>Create Task</p>
-                    </div>
+                    <p style="cursor: pointer;"><i class="fa-solid fa-copyright"
+                            style="color: #6d6d6d; margin-right: 8px;"></i>Learn about more</p>
+                    <input id="crtTask" style="display: flex;" onclick="add()" class="crtTask center" type="submit" value="Create Task" />
+                    <input id="editTask" style="display: none;" onclick="editSub()" class="crtTask center" type="submit" value="Edit Task" />
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- To Do List Cards -->
     <div class="container">
         <div id="to-do-list" class="to-do">
             <div class="title">
                 <h1>Tasks</h1>
-                <p class="count">3</p>
+                <p class="count">0</p>
             </div>
             <div id="add-container" class="column">
-                <div id="todo" class="none"></div>
+                <div class="todo">
+                    <div id="todo-cont">
+                        <div style="width: 100%; align-items: center; cursor: pointer;" class="space-between">
+                            <p id="priority-value" class="low">Low</p>
+                            <i class="fa-solid fa-bars" style="color: #6d6d6d; font-size: 14px;"></i>
+                        </div>
+                        <h1 id="title-val">Title</h1>
+                        <p id="desc" class="todo-desc">Description</p>
+                        <hr style="width: 100%; margin: 20px 0 0 0; border: 0.5px solid #272727;"><br>
+                        <div class="row"
+                            style="margin: -5px 0 20px 0; display: flex; justify-content: flex-end; width: 100%;">
+                            <button class="delete" onclick="deleteTodo(this)"
+                                style="padding: 0; margin: 0; background-color: transparent; border: 0px;">
+                                <i class="fa-solid fa-trash"
+                                    style="font-size: 15px; margin-right: 15px; cursor: pointer;"></i>
+                            </button>
+                            <button class="edit" onclick="showedit()"
+                                style="padding: 0; margin: 0; background-color: transparent; border: 0px;">
+                                <i class="fa-solid fa-pen-to-square" style="font-size: 15px; cursor: pointer;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="todo-new" onclick="showmodul()" class="add-task-btn center">
-                <p><i class="fa-solid fa-plus" style="color: #ffffff; font-size: 1rem; margin-right: 10px;"></i>Add new
+            <div id=" todo-new" onclick="showmodul()" class="add-task-btn center">
+                <p><i class="fa-solid fa-plus" style="font-size: 1rem; margin-right: 10px;"></i>Add new
                     task</p>
             </div>
         </div>
