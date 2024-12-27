@@ -149,6 +149,12 @@ p {
     color: white;
     background-color: #735BFF;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.crtTask:hover {
+    color: #735BFF;
+    background-color: white;
 }
 
 .fa-minus {
@@ -167,9 +173,10 @@ p {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     margin-top: 100px;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .to-do {
@@ -237,13 +244,13 @@ h1 {
 }
 
 
-#add-container {
+.add-cont {
     width: 90%;
     height: auto;
+    min-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .todo {
