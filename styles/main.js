@@ -66,20 +66,6 @@ function add() {
     const warDesc = document.querySelector('#warDesc')
     let add = todo.cloneNode(true);             // Cloning div i guess
 
-    if (!title.value) {                         // Require Title input
-        warTitle.style.display = 'flex';
-        return;
-    } else if (title.value) {
-        warTitle.style.display = 'none';
-    }
-
-    if (!desc.value) {                         // Require Desc input
-        warDesc.style.display = 'flex';
-        return;
-    } else if (desc.value) {
-        warDesc.style.display = 'none';
-    }
-
     add.classList.remove("none");
 
 
@@ -92,6 +78,20 @@ function add() {
         addStuck.appendChild(add);
     } if (stat.value == "done") {
         addDone.appendChild(add);
+    }
+
+    if (!title.value) {                         // Require Title input
+        warTitle.style.display = 'flex';
+        return;
+    } else if (title.value) {
+        warTitle.style.display = 'none';
+    }
+
+    if (!desc.value) {                         // Require Desc input
+        warDesc.style.display = 'flex';
+        return;
+    } else if (desc.value) {
+        warDesc.style.display = 'none';
     }
 
     titleval.textContent = title.value      // Title value
