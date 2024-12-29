@@ -65,20 +65,24 @@ function add() {
     const warTitle = document.querySelector('#warTitle')
     const warDesc = document.querySelector('#warDesc')
     let add = todo.cloneNode(true);             // Cloning div i guess
-
     add.classList.remove("none");
 
 
     // Checks status then add
     if (stat.value == "todo") {
         addCont.appendChild(add);
+        console.log('Task')
     } if (stat.value == "inprogress") {
         addinProgress.appendChild(add);
+        console.log('Progress')
     } if (stat.value == "stuck") {
         addStuck.appendChild(add);
+        console.log('Stuck')
     } if (stat.value == "done") {
         addDone.appendChild(add);
+        console.log('Done')
     }
+    
 
     if (!title.value) {                         // Require Title input
         warTitle.style.display = 'flex';
